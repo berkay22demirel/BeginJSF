@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ManagedProperty Example</title>
+</h:head>
+ 
+    <h:body>
+    	<h3>Scoped Example</h3>
+    	<h:form>
+    		(for change)
+    		<br/>
+    	   Request (press login button) : <h:inputText id="request" value="#{requestScopedBean.request}"></h:inputText>
+    	   <br/>
+    	   Session (open different browser): <h:inputText id="session" value="#{sessionScopedBean.session}"></h:inputText>
+    	   <br/>
+    	   Application (always same): <h:inputText id="application" value="#{applicationScopedBean.application}"></h:inputText>
+    	   <br/>
+    	   View (press f5): <h:inputText id="view" value="#{viewScopedBean.view}"></h:inputText>
+    	   <br/>
+    	   <h:commandButton value="Login">
+    		 <f:ajax execute="request session application view" render="outputRequest outputSession outputApplication outputView" />
+    	   </h:commandButton>
+    	   <h2><h:outputText id="outputRequest" value="Request Scoped Bean : #{requestScopedBean.hashCode}" /></h2>	
+    	   <h2><h:outputText id="outputSession" value="Session Scoped Bean : #{sessionScopedBean.hashCode}" /></h2>
+    	   <h2><h:outputText id="outputApplication" value="Application Scoped Bean : #{applicationScopedBean.hashCode}" /></h2>
+    	   <h2><h:outputText id="outputView" value="View Scoped Bean : #{viewScopedBean.hashCode}" /></h2>
+    	</h:form>
+ 
+    </h:body>
+</html>

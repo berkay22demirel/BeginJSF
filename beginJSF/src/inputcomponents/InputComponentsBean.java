@@ -1,4 +1,4 @@
-package components;
+package inputcomponents;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

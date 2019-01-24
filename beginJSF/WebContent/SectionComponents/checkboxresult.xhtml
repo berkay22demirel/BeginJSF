@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Checkbox Result</title>
+</h:head>
+
+<h:body>
+	
+	<h3>h:selectBooleanCheckbox</h3>
+	#{checkboxBean.check}
+	
+	<h3>f:selectItem</h3>
+	 <c:forEach var="language" items="#{checkboxBean.languages}">     
+       <p>${language}</p>
+    </c:forEach>
+    
+    <h3>f:selectItems with array</h3>
+	 <c:forEach var="jpa" items="#{checkboxBean.jpaFrameworks}">     
+       <p>${jpa}</p>
+    </c:forEach>
+
+</h:body>
+</html>

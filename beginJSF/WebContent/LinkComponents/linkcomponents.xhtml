@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Link Components</title>
+	</h:head>
+	
+	<h:body>
+		
+		<h3>Link Components</h3>
+		
+		<h:form prependId="false" id="form1">
+	
+			<!-- Http Post - Action -->
+			<h:commandLink value="Page1" action="page1" />
+			<br/>
+			<h:commandLink value="Page1 Bean" action="#{linkBean.navigate}" />
+			<br/>
+			<h:commandLink action="page1">
+			<br/>
+				<h:graphicImage value="/resources/images/java2.png"/>
+			</h:commandLink>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<!-- Http Get - Outcome -->
+			<h:link value="Page1" outcome="page1" />
+			<br/>
+			<h:link value="Page1 Bean"  outcome="#{linkBean.navigateString}" />
+			<br/>
+			<h:link outcome="page1">
+				<h:graphicImage value="/resources/images/java2.png"/>
+			</h:link>
+			
+		</h:form>	
+	
+	</h:body>
+</html>

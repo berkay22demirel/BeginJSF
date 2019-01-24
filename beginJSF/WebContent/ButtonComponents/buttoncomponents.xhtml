@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ManagedProperty Example</title>
+	
+	<script>
+		function submitForm(myform){
+			  var myForm=document.getElementById("form1");
+			  myForm.action = "page2.xhtml";
+			  myForm.submit();
+		}
+	</script>
+	
+</h:head>
+ 
+    <h:body>
+    	<h3>Button Components Example</h3>
+    	<!-- http post -->
+    	<h:form prependId="false" id="form1">
+			<h:commandButton value="Page1" action="page1" />
+			<br/>
+			<h:commandButton value="Page2 " action="#{buttonBean.navigate}" />
+			<br/>
+   			<h:commandButton value="Nothing Happens!" type="button" action="page1" />
+   			<br/>
+   			<h:commandButton value="Say Hello" type="button" onclick="alert('hello')" />
+   			<br/>
+   			<h:commandButton value="Submit the Form! "  type="button" onclick="submitForm()"/>
+   			<br/>
+   			<h:commandButton image="/resources/images/java2.png" action="page1"/>
+		</h:form>
+			<br/>
+			<!-- http get -->
+			<h:button value="h:button page1!" outcome="page1" />
+ 
+    </h:body>
+</html>

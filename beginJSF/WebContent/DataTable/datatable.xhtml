@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<h:outputStylesheet library="css" name="datatable.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Data Table Examle</title>
+</h:head>
+<h:body>
+
+	<h:form id="form1">
+
+		<h:dataTable id="dataTable" value="#{studentAdapterBean.studentList}" var="student"
+			captionStyle="font-size:20px" styleClass="student-table"
+			headerClass="student-table-header"
+			rowClasses="student-table-oddRow,student-table-evenRow">
+
+			<f:facet name="caption">Student List</f:facet>
+
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				#{student.name}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Surname</f:facet>
+				#{student.surname}		
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Age</f:facet>
+				#{student.age}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">GNO</f:facet>
+				#{student.gno}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Delete</f:facet>				
+				<h:commandLink value="Delete" action="#{studentAdapterBean.deleteStudent(student)}" />
+			</h:column>
+
+		</h:dataTable>
+
+		<h3>Add Student</h3>
+		<table id="myTable">
+			<tr>
+				<td>Name:</td>
+				<td><h:inputText id="name" value="#{studentAdapterBean.name}" /></td>
+			</tr>
+			<tr>
+				<td>Surname:</td>
+				<td><h:inputText  id="surname" value="#{studentAdapterBean.surname}" /></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><h:inputText value="#{studentAdapterBean.age}" /></td>
+			</tr>
+			<tr>
+				<td>GNO:</td>
+				<td><h:inputText value="#{studentAdapterBean.gno}" /></td>
+			</tr>
+		</table>
+		<p>
+			<h:commandButton value="Add" action="#{studentAdapterBean.addStudent}"/>				
+		</p>
+	</h:form>
+
+</h:body>
+</html>

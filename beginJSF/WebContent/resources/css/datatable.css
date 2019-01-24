@@ -1,0 +1,22 @@
+.student-table{   
+	border-collapse:collapse;
+}
+
+.student-table-header{
+	text-align:center;
+	background:#5d9de4;
+	padding:20px;
+	color: white;
+}
+
+.student-table-oddRow{
+	text-align:center;
+	background:#eaeaea;
+	border-top:1px solid #BBBBBB;
+}
+
+.student-table-evenRow{
+	text-align:center;
+	background:#F9F9F9;
+	border-top:1px solid #BBBBBB;
+}
